@@ -4,26 +4,25 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-	<script type="text/javascript">
-	function allLetter(inputtxt)
-      { 
-      var letters = /^[A-Za-z]+$/;
-      if(inputtxt.value.match(letters)){
-      return true;
-      }
-      else
-      {
-      alert('Please input alphabet characters only');
-	}
-	}
+	<script>
+        function validate() {
+            var x = document.forms.myForm.name.value;
+            var letters = /^[a-zA-Z]+$/;
+            if(x.value.match(letters)) {
+                document.form1.text1.focus();
+                return true;
+            } else {
+                alert('Please enter alphabetic characters only');
+                return false;
+            }
+        }
 	</script>
-	
 </head>
 <body>
 
 <h1>Welcome to Spring Boot</h1>
 
-<form name="myForm" action="/reverseString" method="post">
+<form name="myForm" action="/reverseString" onsubmit="validate()" method="post">
 
 	<h3>Enter the string</h3>
 	<input type="text" name="name" id="name"/>
