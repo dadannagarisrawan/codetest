@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class StringService {
 
     public String caseReversal(String input) {
-        if ((input != null && !input.isEmpty()) && input.matches("^.[^a-zA-Z ].$")) {
+        if ((input != null && !input.isEmpty()) && input.matches("[^a-zA-Z]+")) {
             char[] charArray = input.toCharArray();
             for (int i = 0; i < charArray.length; i++) {
                 if (Character.isLowerCase(charArray[i])) {

@@ -8,8 +8,7 @@
         function validate() {
             var x = document.forms.myForm.name.value;
             var letters = /^[a-zA-Z]+$/;
-            if(x.value.match(letters)) {
-                document.form1.text1.focus();
+            if(x.match(letters)) {
                 return true;
             } else {
                 alert('Please enter alphabetic characters only');
@@ -18,7 +17,7 @@
         }
 	</script>
 </head>
-<body>
+<body onload='document.myForm.name.focus()'>
 
 <h1>Welcome to Spring Boot</h1>
 
