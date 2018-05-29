@@ -1,13 +1,19 @@
 package com.myCodeTest.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorController;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import service.StringOperationService;
 
 @RestController
 public class DemoRestController implements ErrorController{
+
+	private StringOperationService stringOperationService;
 
 	private static final String PATH = "/error";
 
@@ -28,8 +34,8 @@ public class DemoRestController implements ErrorController{
 
 	
 	@RequestMapping(value = "/reverseString" , method= RequestMethod.POST)
-	public String reverseString(){
-		return "reverse";
+	public String reverseString(@RequestParam("name") String name){
+		return "Reverse ";
 	}
-	
+
 }

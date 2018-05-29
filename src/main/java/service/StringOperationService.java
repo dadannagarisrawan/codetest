@@ -1,7 +1,8 @@
 package service;
 
-import jdk.internal.joptsimple.internal.Strings;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StringOperationService {
 
     public boolean isCharacterArray(char[] c) {
@@ -20,15 +21,15 @@ public class StringOperationService {
     }
 
     public String caseReversal(String input) {
-        if (!Strings.isNullOrEmpty(input)) {
+        if (input != null && !input.isEmpty()) {
             char[] charArray = input.toCharArray();
 
             if (isCharacterArray(charArray)) {
                 for (int i = 0; i < charArray.length; i++) {
                     if (Character.isLowerCase(charArray[i])) {
-                        Character.toUpperCase(charArray[i]);
+                        charArray[i] = Character.toUpperCase(charArray[i]);
                     } else {
-                        Character.isLowerCase(charArray[i]);
+                        charArray[i] = Character.toLowerCase(charArray[i]);
                     }
                 }
             }
