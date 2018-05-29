@@ -1,9 +1,10 @@
-package service;
+package com.myCodeTest.demo;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class StringOperationService {
+public class StringService {
+
 
     public boolean isCharacterArray(char[] c) {
         int count = 0;
@@ -24,7 +25,7 @@ public class StringOperationService {
         if (input != null && !input.isEmpty()) {
             char[] charArray = input.toCharArray();
 
-            if (isCharacterArray(charArray)) {
+  //          if (isCharacterArray(charArray)) {
                 for (int i = 0; i < charArray.length; i++) {
                     if (Character.isLowerCase(charArray[i])) {
                         charArray[i] = Character.toUpperCase(charArray[i]);
@@ -32,7 +33,7 @@ public class StringOperationService {
                         charArray[i] = Character.toLowerCase(charArray[i]);
                     }
                 }
-            }
+   //         }
             return new String(charArray);
         } else {
             return "Invalid character in input string";
